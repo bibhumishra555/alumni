@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignIn&SignUp</title>
+    <link rel="stylesheet" type="text/css" href="./login.css" />
+    
+    
+  
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="" class="sign-in-form">
+            <h2 class="title">Sign In</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+
+            
+          </form>
+
+
+          <form action="" class="sign-up-form">
+            <h2 class="title">Sign Up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Full name" required />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Father name" required />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <select id="courseSelect" required>
+                <option value="" disabled selected>Select a course</option>
+                <option value="ECONOMICS">ECONOMICS</option>
+                <option value="mENGLISH">ENGLISH</option>
+                <option value="GEOGRAPHY">GEOGRAPHY</option>
+                <option value="HINDI">HINDI</option>
+                <option value="HISTORY">HISTORY</option>
+                <option value="PHILOSOPHY">PHILOSOPHY</option>
+                <option value="POLITICAL SCIENCE">POLITICAL SCIENCE</option>
+                <option value="PSYCHOLOGY">PSYCHOLOGY</option>
+                <option value="URDU">URDU</option>
+                <option value="BOTANY">BOTANY</option>
+                <option value="CHEMISTRY">CHEMISTRY</option>
+                <option value="MATHEMATICS">MATHEMATICS</option>
+                <option value="PHYSICS">PHYSICS</option>
+                <option value="ZOOLOGY">ZOOLOGY</option>
+                <option value="BCA">BCA</option>
+                <option value="BBA">BBA</option>
+                <option value="B.ED.">B.ED.</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-calendar-alt"></i>
+                  <input type="month" id="monthYear" name="monthYear" 
+           min="1960-01" max="2025-12" required>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Registarion number" required />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" required />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" required />
+            </div>
+            <input type="submit" value="Sign Up" class="btn solid" />
+
+            
+          </form>
+        </div>
+      </div>
+      <div class="panels-container">
+
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>New here?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio minus natus est.</p>
+                <button class="btn transparent" id="sign-up-btn">Sign Up</button>
+            </div>
+            <img src="./img/log.svg" class="image" alt="">
+        </div>
+
+        <div class="panel right-panel">
+            <div class="content">
+                <h3>One of us?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio minus natus est.</p>
+                <button class="btn transparent" id="sign-in-btn">Sign In</button>
+            </div>
+            <img src="./img/register.svg" class="image" alt="">
+        </div>
+      </div>
+    </div>
+
+    <script src="./login.js"></script>
+  </body>
+</html>
