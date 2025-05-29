@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alumni Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-image">
+        <img src="https://i.pravatar.cc/150?img=10" alt="Profile Picture" />
+        <input type="file" id="upload" hidden />
+        <label for="upload" class="upload-btn"><i class="fas fa-camera"></i></label>
+      </div>
+      <div class="profile-info">
+        <h2 id="full-name">John Doe</h2>
+        <p><i class="fas fa-envelope"></i> <span id="user-email">johndoe@example.com</span></p>
+        <p><i class="fas fa-map-marker-alt"></i> <span id="user-location">New York, USA</span></p>
+        <p><i class="fas fa-briefcase"></i> Software Engineer</p>
+        <p><i class="fas fa-graduation-cap"></i> BCA Batch 2020</p>
+      </div>
+      <button class="edit-btn" onclick="toggleEdit()">Edit Profile</button>
+    </div>
+
+    <div class="profile-edit" id="edit-section">
+      <h3>Edit Information</h3>
+      <input type="text" id="nameInput" placeholder="Full Name" />
+      <input type="email" id="emailInput" placeholder="Email" />
+      <input type="text" id="locationInput" placeholder="Location" />
+      <input type="text" id="jobInput" placeholder="Profession" />
+      <input type="text" id="batchInput" placeholder="Batch Year" />
+      <button onclick="saveProfile()">Save</button>
+    </div>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>
