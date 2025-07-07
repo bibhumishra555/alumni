@@ -1,0 +1,187 @@
+/*
+    Admin Login Page Stylesheet
+
+    What:
+        Provides a modern, visually appealing, and consistent login experience for administrators.
+
+    Why:
+        A beautiful and unified login page helps admins feel confident and welcome, 
+        while ensuring the interface matches the main admin dashboard for a seamless experience.
+
+    How:
+        - Uses the same dark color palette, gradients, and glassmorphism as the admin dashboard.
+        - Centers the login card with a subtle animated background for depth.
+        - Styles form elements for clarity, accessibility, and ease of use.
+        - Adds smooth transitions and a fade-in animation for a polished feel.
+        - Ensures the design is responsive for all screen sizes.
+*/
+
+/* ====== Background & Centering ====== */
+
+/* Full-page dark animated gradient background, matching admin dashboard */
+body {
+    background: linear-gradient(135deg, #181a1b 0%, #23272b 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background-size: 200% 200%;
+    animation: gradientMove 8s ease-in-out infinite;
+}
+
+/* Subtle animated shimmer for background movement */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ====== Login Container (Glassmorphism Card) ====== */
+
+/* Main card: dark, semi-transparent, blurred, and softly shadowed */
+.login-container {
+    background: rgba(34, 37, 41, 0.92); /* Matches admin dashboard container */
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 1.5px 8px rgba(52,58,64,0.18);
+    width: 340px;
+    max-width: 94vw;
+    text-align: center;
+    border: 1.5px solid rgba(52, 58, 64, 0.18);
+    transition: box-shadow 0.2s;
+}
+
+/* Card shadow intensifies on hover/focus for interactivity */
+.login-container:hover, .login-container:focus-within {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.32), 0 2px 12px rgba(52,58,64,0.22);
+}
+
+/* ====== Heading ====== */
+
+/* Large, bold, bright heading with subtle shadow and underline */
+.login-container h2 {
+    margin-bottom: 1.5rem;
+    color: #f8f9fa;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    text-shadow: 0 2px 8px rgba(52,58,64,0.12);
+    border-bottom: 2px solid #343a40;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* ====== Labels & Inputs ====== */
+
+/* Form labels: muted, bold, and spaced for clarity */
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.3rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #adb5bd;
+    letter-spacing: 0.2px;
+}
+
+/* Input fields: dark, rounded, and smooth with focus highlight */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    margin-bottom: 0.5rem;
+    border: 1.5px solid #343a40;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    background: rgba(24,26,27,0.98);
+    color: #f8f9fa;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+/* Input focus: blue border and lighter background for accessibility */
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.10);
+    background: #23272b;
+}
+
+/* ====== Error Message ====== */
+
+/* Error message: red, clear, and always takes up space to avoid layout shift */
+.error {
+    color: #dc3545;
+    margin-bottom: 0.5rem;
+    min-height: 1.2em;
+    font-size: 0.98rem;
+    letter-spacing: 0.1px;
+    text-align: left;
+    padding-left: 2px;
+}
+
+/* ====== Submit Button ====== */
+
+/* Main login button: blue gradient, bold, rounded, and interactive */
+button[type="submit"] {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.13rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.10);
+    letter-spacing: 0.5px;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+/* Button hover/focus: reverse gradient and lift effect */
+button[type="submit"]:hover, button[type="submit"]:focus {
+    background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+    box-shadow: 0 4px 16px rgba(0,123,255,0.18);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* ====== Responsive Design ====== */
+
+/* Adjusts padding, font, and card size for small screens */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+        width: 98vw;
+        border-radius: 12px;
+    }
+    .login-container h2 {
+        font-size: 1.3rem;
+    }
+    input[type="text"], input[type="password"] {
+        font-size: 0.98rem;
+        padding: 0.6rem 0.7rem;
+    }
+    button[type="submit"] {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+}
+
+/* ====== Extra Touch: Subtle Fade-in Animation ====== */
+
+/* Card fades in and slides up on page load for a polished effect */
+.login-container {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    animation: fadeInUp 0.7s cubic-bezier(.23,1.01,.32,1) 0.1s forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}

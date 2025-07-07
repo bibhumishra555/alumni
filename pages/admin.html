@@ -1,0 +1,145 @@
+<!--
+    Admin Dashboard Page
+
+    This page provides a secure, easy-to-use interface for administrators to manage users and events.
+    It helps admins keep the system organized by allowing them to view, add, and remove users and events.
+
+    Why:
+      - Prevents unauthorized access to sensitive admin features.
+      - Centralizes user and event management for efficiency.
+
+    How:
+      - Uses Bootstrap for a clean, responsive layout.
+      - Displays users and events in separate tabs with tables.
+      - Lets admins add new events via a modal form.
+      - Loads and updates data dynamically using JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set character encoding for proper text display -->
+    <meta charset="UTF-8">
+    <!-- Page title shown in browser tab -->
+    <title>Admin Panel</title>
+    <!-- Bootstrap CSS for styling and layout -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom admin styles -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="bg-dark text-light">
+    <div class="container py-4">
+        <!-- Main heading for the admin panel -->
+        <h2 class="mb-4">Admin Panel</h2>
+
+        <!-- Navigation tabs for switching between Users and Events -->
+        <ul class="nav nav-tabs mb-3" id="adminTabs">
+            <li class="nav-item">
+                <!-- Users tab (active by default) -->
+                <a class="nav-link active" data-bs-toggle="tab" href="#usersTab">Users</a>
+            </li>
+            <li class="nav-item">
+                <!-- Events tab -->
+                <a class="nav-link" data-bs-toggle="tab" href="#eventsTab">Events</a>
+            </li>
+        </ul>
+
+        <!-- Tab content area -->
+        <div class="tab-content">
+            <!-- Users Tab Content -->
+            <div class="tab-pane fade show active" id="usersTab">
+                <h4>All Users</h4>
+                <!-- Table displaying all users -->
+                <table class="table table-dark table-striped" id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Users will be loaded here dynamically by admin.js -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Events Tab Content -->
+            <div class="tab-pane fade" id="eventsTab">
+                <h4>All Events</h4>
+                <!-- Button to open the Add Event modal -->
+                <button class="btn btn-success mb-2" id="addEventBtn" data-bs-toggle="modal" data-bs-target="#addEventModal">
+                    Add Event
+                </button>
+                <!-- Table displaying all events -->
+                <table class="table table-dark table-striped" id="eventsTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Venue</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Events will be loaded here dynamically by admin.js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal dialog for adding a new event -->
+    <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <!-- Form for entering new event details -->
+        <form class="modal-content" id="adminEventForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
+            <!-- Button to close the modal -->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <!-- Event Title input -->
+              <div class="mb-3">
+                  <label for="adminEventTitle" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="adminEventTitle" required>
+              </div>
+              <!-- Event Date input -->
+              <div class="mb-3">
+                  <label for="adminEventDate" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="adminEventDate" required>
+              </div>
+              <!-- Event Time input -->
+              <div class="mb-3">
+                  <label for="adminEventTime" class="form-label">Time</label>
+                  <input type="time" class="form-control" id="adminEventTime" required>
+              </div>
+              <!-- Event Venue input -->
+              <div class="mb-3">
+                  <label for="adminEventVenue" class="form-label">Venue</label>
+                  <input type="text" class="form-control" id="adminEventVenue" required>
+              </div>
+              <!-- Event Description input -->
+              <div class="mb-3">
+                  <label for="adminEventDescription" class="form-label">Description</label>
+                  <textarea class="form-control" id="adminEventDescription" rows="3"></textarea>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <!-- Save and Cancel buttons for the modal -->
+            <button type="submit" class="btn btn-primary">Save Event</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main admin dashboard JavaScript (handles data loading and actions) -->
+    <script src="admin.js"></script>
+    <!-- Bootstrap JS for modal and tab functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

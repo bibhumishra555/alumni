@@ -1,0 +1,48 @@
+<!--
+    Admin Login Page
+
+    This page provides a secure login form for administrators.
+    It ensures only authorized users can access sensitive admin features.
+
+    Why:
+      - Protects the admin dashboard and management tools from unauthorized access.
+      - Keeps user and event management secure.
+
+    How:
+      - Presents a simple, focused login form for username and password.
+      - Uses JavaScript to handle form submission and communicate with the backend.
+      - Displays helpful error messages if login fails.
+      - Redirects successful logins to the admin dashboard.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <!-- Link to custom styles for the login page -->
+    <link rel="stylesheet" href="admin_login.css">
+</head>
+<body>
+    <!-- Centered container for the login form -->
+    <div class="login-container">
+        <!-- Page heading -->
+        <h2>Admin Login</h2>
+        <!-- Login form for admin credentials -->
+        <form id="loginForm">
+            <!-- Username input field -->
+            <label for="username">Username</label>
+            <input type="text" id="username" required autocomplete="username">
+            <!-- Password input field -->
+            <label for="password">Password</label>
+            <input type="password" id="password" required autocomplete="current-password">
+            <!-- Error message area (populated by JS if login fails) -->
+            <div id="errorMsg" class="error"></div>
+            <!-- Submit button for the form -->
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <!-- JavaScript for handling login logic -->
+    <script src="admin_login.js"></script>
+</body>
+</html>

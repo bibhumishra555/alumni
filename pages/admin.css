@@ -1,0 +1,225 @@
+/*
+    Admin Dashboard Custom Stylesheet
+
+    What:
+        This CSS file styles the admin dashboard, giving it a modern yet timeless look.
+        It creates a visually appealing, easy-to-read, and professional interface for administrators.
+
+    Why:
+        A well-designed UI helps admins focus on tasks, reduces eye strain, and makes managing users and events efficient and pleasant.
+
+    How:
+        - Uses a dark theme with gradients and subtle highlights for a modern feel.
+        - Applies rounded corners, spacing, and shadows for a classic, clean appearance.
+        - Styles tables, buttons, forms, and modals for clarity and usability.
+        - Ensures responsiveness for mobile and desktop screens.
+*/
+
+/* ====== Layout & Background ====== */
+
+/* Main dark gradient background and base font for the whole page */
+body.bg-dark {
+    background: linear-gradient(135deg, #181a1b 0%, #23272b 100%);
+    color: #f8f9fa;
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+/* Central container with soft background, rounded corners, and shadow */
+.container {
+    background: rgba(34, 37, 41, 0.98);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.25);
+    padding: 2.5rem 2rem;
+    margin-top: 2.5rem;
+}
+
+/* ====== Headings ====== */
+
+/* Main and section headings: bold, bright, and spaced for clarity */
+h2, h4 {
+    color: #f8f9fa;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+h2 {
+    border-bottom: 2px solid #343a40;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* ====== Navigation Tabs ====== */
+
+/* Tab bar with subtle border for separation */
+.nav-tabs {
+    border-bottom: 2px solid #343a40;
+}
+
+/* Tab links: muted by default, highlighted on hover/active */
+.nav-link {
+    color: #adb5bd;
+    font-weight: 500;
+    border-radius: 8px 8px 0 0;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-link.active, .nav-link:hover {
+    background: #23272b;
+    color: #fff;
+    border-color: #495057 #495057 #23272b;
+}
+
+/* ====== Tables ====== */
+
+/* Table container: rounded corners and no overflow */
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+/* Table background for dark mode */
+.table-dark {
+    background-color: #23272b;
+}
+
+/* Table cells: vertical alignment and subtle borders */
+.table th, .table td {
+    vertical-align: middle;
+    border-color: #343a40;
+    font-size: 1rem;
+}
+
+/* Alternate row striping for readability */
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #202326;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #23272b;
+}
+
+/* ====== Buttons ====== */
+
+/* All buttons: rounded, bold, and smooth transitions */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+/* Success (green) button for positive actions */
+.btn-success {
+    background: linear-gradient(90deg, #28a745 60%, #218838 100%);
+    border: none;
+}
+.btn-success:hover, .btn-success:focus {
+    background: linear-gradient(90deg, #218838 60%, #28a745 100%);
+    color: #fff;
+}
+
+/* Danger (red) button for destructive actions */
+.btn-danger {
+    background: linear-gradient(90deg, #dc3545 60%, #b52a37 100%);
+    border: none;
+}
+.btn-danger:hover, .btn-danger:focus {
+    background: linear-gradient(90deg, #b52a37 60%, #dc3545 100%);
+    color: #fff;
+}
+
+/* Primary (blue) button for main actions */
+.btn-primary {
+    background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+    border: none;
+}
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+    color: #fff;
+}
+
+/* Secondary (gray) button for neutral actions */
+.btn-secondary {
+    background: #343a40;
+    border: none;
+    color: #adb5bd;
+}
+.btn-secondary:hover, .btn-secondary:focus {
+    background: #23272b;
+    color: #fff;
+}
+
+/* ====== Modal Dialogs ====== */
+
+/* Modal content: dark background, rounded, and shadowed */
+.modal-content {
+    background-color: #23272b !important;
+    color: #fff !important;
+    border: 1px solid #343a40;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35);
+}
+
+/* Modal header/footer: subtle separation */
+.modal-header, .modal-footer {
+    background-color: #23272b !important;
+    border-bottom: 1px solid #343a40;
+    border-top: 1px solid #343a40;
+}
+
+/* Modal title: bold and bright */
+.modal-title {
+    color: #f8f9fa;
+    font-weight: 600;
+}
+
+/* Modal close button: visible on dark background */
+.btn-close {
+    filter: invert(1);
+}
+
+/* ====== Forms ====== */
+
+/* Inputs, selects, and textareas: dark, clean, and focused highlights */
+.form-control, .form-select, textarea {
+    background-color: #181a1b !important;
+    color: #fff !important;
+    border: 1px solid #343a40;
+    border-radius: 6px;
+    box-shadow: none;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus, .form-select:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #23272b !important;
+}
+
+/* Form labels: muted and bold for clarity */
+.form-label {
+    color: #ccc !important;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+/* ====== Responsive Design ====== */
+
+/* Adjust layout and font sizes for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.2rem 0.5rem;
+        margin-top: 1rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.1rem;
+    }
+    .table th, .table td {
+        font-size: 0.95rem;
+    }
+}
